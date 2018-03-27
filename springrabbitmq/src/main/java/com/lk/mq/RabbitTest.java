@@ -21,4 +21,15 @@ public class RabbitTest {
     public void hello() {
         helloSender1.send();
     }
+
+    /**
+     * 单生产者-多消费者
+     */
+    @GetMapping("/oneToMany")
+    public void oneToMany() {
+        for (int i = 1; i < 11; i++) {
+            helloSender1.send("hellomsg:" + i);
+        }
+
+    }
 }

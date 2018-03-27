@@ -22,4 +22,10 @@ public class HelloSender1 {
         rabbitTemplate.convertAndSend("hello", sendMsg);
     }
 
+
+    public void send(String msg) {
+        String sendMsg = msg + new Date();
+        System.out.println("Sender1 : " + sendMsg);
+        this.rabbitTemplate.convertAndSend("hello", sendMsg);
+    }
 }

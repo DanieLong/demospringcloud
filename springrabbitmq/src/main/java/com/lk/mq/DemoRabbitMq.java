@@ -1,9 +1,6 @@
 package com.lk.mq;
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.FanoutExchange;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+
+import org.springframework.amqp.core.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -14,11 +11,11 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class DemoRabbitMq {
 
-    final static String queueName = "hello";
+//    final static String queueName = "hello";
 
     @Bean
     public Queue helloQueue() {
-        return new Queue("helloQueue");
+        return new Queue("hello");
     }
 
     @Bean
@@ -61,6 +58,7 @@ public class DemoRabbitMq {
     TopicExchange exchange() {
         return new TopicExchange("exchange");
     }
+
     @Bean
     FanoutExchange fanoutExchange() {
         return new FanoutExchange("fanoutExchange");
@@ -68,6 +66,7 @@ public class DemoRabbitMq {
 
     /**
      * 将队列topic.message与exchange绑定，binding_key为topic.message,就是完全匹配
+     *
      * @param queueMessage
      * @param exchange
      * @return
@@ -79,6 +78,7 @@ public class DemoRabbitMq {
 
     /**
      * 将队列topic.messages与exchange绑定，binding_key为topic.#,模糊匹配
+     *
      * @param queueMessage
      * @param exchange
      * @return
@@ -89,7 +89,7 @@ public class DemoRabbitMq {
     }
 
     @Bean
-    Binding bindingExchangeA(Queue AMessage,FanoutExchange fanoutExchange) {
+    Binding bindingExchangeA(Queue AMessage, FanoutExchange fanoutExchange) {
         return BindingBuilder.bind(AMessage).to(fanoutExchange);
     }
 
@@ -106,6 +106,7 @@ public class DemoRabbitMq {
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(DemoRabbitMq.class, args);
+
     }
 
 }
