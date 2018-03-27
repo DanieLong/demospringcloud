@@ -9,6 +9,7 @@
         <module name="democlient" />
         <module name="democonsumer" />
         <module name="demoserver" />
+        <module name="springrabbitmq" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="democonsumer" target="1.8" />
       <module name="demoserver" target="1.8" />
       <module name="demospringcloud" target="1.8" />
+      <module name="springrabbitmq" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

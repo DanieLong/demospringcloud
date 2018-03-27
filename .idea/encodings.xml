@@ -5,5 +5,6 @@
     <file url="file://$PROJECT_DIR$/democlient" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/democonsumer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demoserver" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springrabbitmq" charset="UTF-8" />
   </component>
 </project>
