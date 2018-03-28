@@ -8,6 +8,7 @@
         <module>democlient</module>
         <module>democonsumer</module>
         <module>springrabbitmq</module>
+        <module>productservice</module>
     </modules>
 
     <parent>
@@ -38,11 +39,6 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
 
     </dependencies>
 
