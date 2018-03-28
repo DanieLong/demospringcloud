@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+#.gitignore
+
+*.iml
+
+.idea
+springrabbitmq/src/test/
+springrabbitmq/target/
+
+democlient/target/
+democonsumer/target/
+demoserver/target/
+
