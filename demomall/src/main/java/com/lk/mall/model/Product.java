@@ -1,4 +1,4 @@
-package com.lk.model;
+package com.lk.mall.model;
 
 public class Product {
     private static final long serialVersionUID = 1L;

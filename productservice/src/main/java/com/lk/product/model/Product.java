@@ -1,4 +1,4 @@
-package com.lk.model;
+package com.lk.product.model;
 
 /**
  * 商品信息DTO对象

@@ -10,9 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>demo-mall</artifactId>
-
-    <name>Spring Cloud Sample Projects: Mall</name>
-
+    <version>1.0</version>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -30,10 +28,23 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+        </dependency>
+
+
     </dependencies>
 
 

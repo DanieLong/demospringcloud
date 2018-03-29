@@ -1,7 +1,7 @@
-package com.lk.service;
+package com.lk.mall.service;
 
-import com.lk.model.Product;
-import com.lk.service.impl.ProductServiceFallback;
+import com.lk.mall.model.Product;
+import com.lk.mall.service.impl.ProductServiceFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;

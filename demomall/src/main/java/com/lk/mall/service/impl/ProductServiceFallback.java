@@ -1,7 +1,7 @@
-package com.lk.service.impl;
+package com.lk.mall.service.impl;
 
-import com.lk.model.Product;
-import com.lk.service.ProductService;
+import com.lk.mall.model.Product;
+import com.lk.mall.service.ProductService;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;

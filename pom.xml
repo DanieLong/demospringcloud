@@ -9,8 +9,9 @@
         <module>democonsumer</module>
         <module>springrabbitmq</module>
         <module>productservice</module>
-        <module>productservice</module>
         <module>demomall</module>
+        <module>zuulserver</module>
+        <module>userservice</module>
     </modules>
 
     <parent>

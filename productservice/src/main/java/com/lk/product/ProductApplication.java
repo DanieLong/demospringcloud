@@ -1,4 +1,4 @@
-package com.lk;
+package com.lk.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -9,9 +9,9 @@
         <relativePath>../../demospringcloud</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.lk.study.server</groupId>
     <artifactId>demo-server</artifactId>
-
+    <version>1.0</version>
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -1,6 +1,6 @@
-package com.lk.controller;
+package com.lk.product.controller;
 
-import com.lk.model.Product;
+import com.lk.product.model.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -10,8 +10,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.lk.study.product-service</groupId>
     <artifactId>product-service</artifactId>
-    <name>Spring Cloud Sample Projects: Product Service Server</name>
+    <version>1.0</version>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

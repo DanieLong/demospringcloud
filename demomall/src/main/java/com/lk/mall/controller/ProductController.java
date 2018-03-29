@@ -1,7 +1,7 @@
-package com.lk.controller;
+package com.lk.mall.controller;
 
-import com.lk.model.Product;
-import com.lk.service.ProductService;
+import com.lk.mall.model.Product;
+import com.lk.mall.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
