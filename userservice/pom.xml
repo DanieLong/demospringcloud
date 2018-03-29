@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>demo-spring-cloud</artifactId>
+        <groupId>com.lk.study</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../demospringcloud</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>user-service</artifactId>
+    <version>1.0</version>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lk.study.product-service</groupId>
+            <artifactId>product-service</artifactId>
+            <version>1.0</version>
+           <scope>system</scope>
+            <systemPath>${basedir}/lib/product-service-1.0.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>user-service</finalName>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <resources>
+            <!-- 控制资源文件的拷贝 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.tld</include>
+                </includes>
+                <!--<filtering>false</filtering>-->
+
+                <!-- 配置文件外置（在打包时取消注释）
+                    资源文件拷贝到编译输出路径target的子文件夹config目录下，最终结构如下:
+                    target
+                       ...config
+                           ...spring
+                           ...mapper
+                           ...env
+                       ...lib
+                       ...generateImportCarSql.jar
+                 -->
+                <targetPath>${project.build.directory}/</targetPath>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <!-- 设置编译版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <!-- 打包jar文件时，配置manifest文件，加入lib包的jar依赖 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <!--使用自己的Manifest文件，运行正常-->
+                        <!--<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>-->
+                        <!--使用插件添加的Manifest文件，运行正常，一定要注意Manifest中jar包名称和lib文件夹下jar包名称版本号后缀等一定要一致，否则找不到依赖jar，此处有坑-->
+                        <manifest>
+                            <mainClass>com.lk.user.UserServiceApplication</mainClass>
+                            <addClasspath>true</addClasspath>
+                            <!--指定依赖资源路径前缀-->
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                        <!--可以把依赖本地系统的Jar包加入Manifest文件中-->
+                        <manifestEntries>
+                            <Class-Path>lib/product-service-1.0.jar</Class-Path>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- 拷贝依赖的jar包到lib目录 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/lib
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+     </plugins>
+
+    </build>
+</project>
