@@ -12,6 +12,8 @@
         <module>demomall</module>
         <module>zuulserver</module>
         <module>userservice</module>
+        <module>config-server</module>
+        <module>demo-security</module>
     </modules>
 
     <parent>
@@ -40,10 +42,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <dependencies>
-
-    </dependencies>
 
     <build>
         <plugins>
