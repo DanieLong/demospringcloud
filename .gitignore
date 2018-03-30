@@ -10,4 +10,5 @@ springrabbitmq/target/
 democlient/target/
 democonsumer/target/
 demoserver/target/
+userservice/target/
 
